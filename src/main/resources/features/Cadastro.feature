@@ -3,10 +3,17 @@
 
 @cadastro @regressivo
 Funcionalidade: Cadastro
+  Como um futuro usuario do site
+  Gostaria de criar um novo usuario para acessar o site
 
-  @positivo @web
-  Cenario: Realizar cadastro com sucesso no sistema
+  Contexto: Acessar tela de cadastro
     Dado que eu acesso o site
-    Quando clico em novo usuario
-    E crio um usuario preenchendo corretamente os campos de cadastro
-    Então valido que a mensagem "Usuário inserido com sucesso" esta sendo exibida
+    E clico em Sign in
+
+  @executar @web
+  Cenario: Realizar cadastro com sucesso no sistema
+    Quando preencho o campo Email com um email valido
+    E clico em Create an account
+    E preencho os campos de cadastro corretamente
+    E clico em Register
+    Entao serei redirecionado para a tela de My Account
