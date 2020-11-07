@@ -4,8 +4,8 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>br.com.guilhermeevangelista.selenium</groupId>
-    <artifactId>frame-apirest-bdd</artifactId>
+    <groupId>br.com.site.selenium</groupId>
+    <artifactId>frame-teste-bdd</artifactId>
     <version>1.0-SNAPSHOT</version>
 
     <build>
@@ -32,7 +32,7 @@
                     </execution>
                 </executions>
                 <configuration>
-                    <customCss>src\main\java\br\com\guilhermeevangelista\selenium\core\utils\report\custom.css</customCss>
+                    <customCss>src\main\java\br\com\site\selenium\core\utils\report\custom.css</customCss>
                     <customPageTitle>Frame RestAssured</customPageTitle>
                     <sourceJsonReportDirectory>${project.build.directory}/cucumber-report</sourceJsonReportDirectory>
                     <generatedHtmlReportDirectory>${project.build.directory}/generated-report</generatedHtmlReportDirectory>
