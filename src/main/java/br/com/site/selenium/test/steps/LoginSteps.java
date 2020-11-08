@@ -7,7 +7,10 @@ import io.cucumber.java.pt.E;
 import io.cucumber.java.pt.Entao;
 import io.cucumber.java.pt.Quando;
 
+import org.json.simple.parser.ParseException;
 import org.junit.Assert;
+
+import java.io.IOException;
 
 public class LoginSteps {
 
@@ -24,7 +27,7 @@ public class LoginSteps {
     }
 
     @Quando("realizo login com o usuario {string}")
-    public void realizoLoginComOUsuario(String condicao) {
+    public void realizoLoginComOUsuario(String condicao) throws IOException, ParseException {
         loginPage.preencheEmailLogin(condicao);
         loginPage.preencheSenhaValida();
     }

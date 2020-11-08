@@ -1,9 +1,13 @@
 package br.com.site.selenium.test.pages;
 
 import br.com.site.selenium.core.driver.BasePage;
+import br.com.site.selenium.core.utils.enums.JSONFileManager;
 import br.com.site.selenium.core.utils.report.PrintScreenManager;
+import org.json.simple.parser.ParseException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+
+import java.io.IOException;
 
 public class LoginPage extends BasePage {
 
@@ -33,19 +37,19 @@ public class LoginPage extends BasePage {
         PrintScreenManager.takePrintSave();
     }
 
-    public void preencheEmailLogin(String condicao) {
+    public void preencheEmailLogin(String condicao) throws IOException, ParseException {
         waitForElementPageToBeClickable(campoEmail);
         if (condicao.toLowerCase().equals("invalido")) {
             campoEmail.sendKeys("email@falso.co.jp");
         } else {
-            campoEmail.sendKeys("lorraine.ambrosio@gmail.com");
+            campoEmail.sendKeys(JSONFileManager.readJSONEmail());
         }
         super.tirarPrint();
         PrintScreenManager.takePrintSave();
     }
 
-    public void preencheSenhaValida() {
-        campoSenha.sendKeys("senha123");
+    public void preencheSenhaValida() throws IOException, ParseException {
+        campoSenha.sendKeys(JSONFileManager.readJSONSenha());
         super.tirarPrint();
         PrintScreenManager.takePrintSave();
     }
