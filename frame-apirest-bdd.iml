@@ -74,5 +74,6 @@
     <orderEntry type="library" name="Maven: org.codehaus.plexus:plexus-utils:3.3.0" level="project" />
     <orderEntry type="library" name="Maven: io.cucumber:gherkin:13.0.0" level="project" />
     <orderEntry type="library" name="Maven: io.cucumber:messages:12.0.0" level="project" />
+    <orderEntry type="library" name="Maven: com.googlecode.json-simple:json-simple:1.1.1" level="project" />
   </component>
 </module>

@@ -4,7 +4,10 @@ import br.com.site.selenium.test.pages.CadastroPage;
 import io.cucumber.java.pt.E;
 import io.cucumber.java.pt.Entao;
 import io.cucumber.java.pt.Quando;
+import org.json.simple.parser.ParseException;
 import org.junit.Assert;
+
+import java.io.IOException;
 
 public class CadastroSteps {
     CadastroPage cadastroPage;
@@ -14,7 +17,7 @@ public class CadastroSteps {
     }
 
     @Quando("preencho o campo Email com um email valido")
-    public void preenchoOCampoEmailComUmEmailValido() {
+    public void preenchoOCampoEmailComUmEmailValido() throws IOException, ParseException {
         cadastroPage.preencheEmailAdress();
     }
 

@@ -3,10 +3,13 @@ package br.com.site.selenium.test.pages;
 import br.com.site.selenium.core.driver.BasePage;
 
 import br.com.site.selenium.core.utils.FakeUtils;
+import br.com.site.selenium.core.utils.enums.JSONFileManager;
 import br.com.site.selenium.core.utils.report.PrintScreenManager;
+import org.json.simple.parser.ParseException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
+import java.io.IOException;
 import java.util.List;
 import java.util.Random;
 
@@ -70,9 +73,10 @@ public class CadastroPage extends BasePage {
         super.tirarPrint();
         PrintScreenManager.takePrintSave();
     }
-    public void preencheEmailAdress() {
+    public void preencheEmailAdress() throws IOException, ParseException {
         super.waitForElementPageToBeClickable(campoEmailAdress);
         String email = FakeUtils.gerarEmail();
+        JSONFileManager.writeJson(email,"senha123");
         campoEmailAdress.sendKeys(email);
         super.tirarPrint();
         PrintScreenManager.takePrintSave();
@@ -103,7 +107,7 @@ public class CadastroPage extends BasePage {
     public void selecionarDataDeNascimento() {
         Random random = new Random();
         boxMes.click();
-        optionMes.get(random.nextInt(optionMes.size())).click();
+        optionMes.get(random.nextInt(optionMes.size()-1)+1).click();
         boxDia.click();
         optionDia.get(random.nextInt(optionDia.size()-3 ) +3).click();
         boxAno.click();
